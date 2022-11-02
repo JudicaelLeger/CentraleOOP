@@ -19,8 +19,10 @@ EAddition class >> left: anExpression1 right: anExpression2 [
 ]
 
 { #category : #accessing }
-EAddition >> evaluate [
-	^ (right evaluate + left evaluate)
+EAddition >> evaluateWith: anObject [
+
+	^ (right evaluateWith: anObject)
+	  + (left evaluateWith: anObject)
 ]
 
 { #category : #accessing }
@@ -29,12 +31,8 @@ EAddition >> left: anExpression [
 ]
 
 { #category : #accessing }
-EAddition >> printOn: aStream [
-	aStream nextPutAll: '( ';
-	nextPutAll: left printString;
-	nextPutAll: ' + ';
-	nextPutAll: right printString;
-	nextPutAll: ' )'
+EAddition >> operatorString [ 
+	^' + '
 ]
 
 { #category : #accessing }

@@ -19,8 +19,10 @@ EMultiplication class >> left:anExpression1 right:anExpression2 [
 ]
 
 { #category : #accessing }
-EMultiplication >> evaluate [
-	^(right evaluate * left evaluate)
+EMultiplication >> evaluateWith: anObject [
+
+	^ (right evaluateWith: anObject)
+	  * (left evaluateWith: anObject)
 ]
 
 { #category : #accessing }
@@ -29,12 +31,8 @@ EMultiplication >> left: anExpression [
 ]
 
 { #category : #accessing }
-EMultiplication >> printOn: aStream [
-	aStream nextPutAll: '( ';
-	nextPutAll: left printString;
-	nextPutAll: ' * ';
-	nextPutAll: right printString;
-	nextPutAll: ' )'
+EMultiplication >> operatorString [ 
+	^' * '
 ]
 
 { #category : #accessing }

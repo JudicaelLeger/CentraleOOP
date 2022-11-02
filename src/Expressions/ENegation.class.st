@@ -13,8 +13,9 @@ ENegation class >> expression: anExpression [
 ]
 
 { #category : #accessing }
-ENegation >> evaluate [
-	^(expression evaluate) * -1
+ENegation >> evaluateWith: anObject [
+
+	^ (expression evaluateWith: anObject) * -1
 ]
 
 { #category : #accessing }
