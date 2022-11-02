@@ -19,10 +19,14 @@ EAddition class >> left: anExpression1 right: anExpression2 [
 ]
 
 { #category : #accessing }
+EAddition >> accept: aVisitor [
+	^aVisitor visitAddition: self
+]
+
+{ #category : #accessing }
 EAddition >> evaluateWith: anObject [
 
-	^ (right evaluateWith: anObject)
-	  + (left evaluateWith: anObject)
+	^ self accept: (EEvaluatorVisitor new binding: anObject)
 ]
 
 { #category : #accessing }

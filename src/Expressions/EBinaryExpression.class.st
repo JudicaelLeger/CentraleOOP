@@ -9,6 +9,11 @@ Class {
 }
 
 { #category : #printing }
+EBinaryExpression >> left [
+	^left
+]
+
+{ #category : #printing }
 EBinaryExpression >> operatorString [
 
 	^ self subclassResponsibility 
@@ -21,4 +26,9 @@ EBinaryExpression >> printOn: aStream [
 	aStream nextPutAll: self operatorString.
 	right printOn: aStream.
 	aStream nextPutAll: ' )'
+]
+
+{ #category : #printing }
+EBinaryExpression >> right [
+	^right 
 ]

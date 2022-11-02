@@ -19,10 +19,14 @@ EMultiplication class >> left:anExpression1 right:anExpression2 [
 ]
 
 { #category : #accessing }
+EMultiplication >> accept: aVisitor [
+	^aVisitor visitMultiplication: self
+]
+
+{ #category : #accessing }
 EMultiplication >> evaluateWith: anObject [
 
-	^ (right evaluateWith: anObject)
-	  * (left evaluateWith: anObject)
+	^ self accept: (EEvaluatorVisitor new binding: anObject)
 ]
 
 { #category : #accessing }

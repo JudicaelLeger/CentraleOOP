@@ -24,14 +24,24 @@ EConstant class >> value: anInteger [
 	^self new value: anInteger
 ]
 
+{ #category : #accessing }
+EConstant >> accept: aVisitor [
+	^aVisitor visitConstant: self
+]
+
 { #category : #'public access' }
 EConstant >> evaluateWith: anObject [
-	^value
+	^ self accept: EEvaluatorVisitor new
 ]
 
 { #category : #accessing }
 EConstant >> printOn: aStream [
 	aStream nextPutAll: value printString
+]
+
+{ #category : #accessing }
+EConstant >> value [
+	^value
 ]
 
 { #category : #accessing }
