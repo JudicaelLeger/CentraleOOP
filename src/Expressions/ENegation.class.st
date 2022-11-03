@@ -18,12 +18,6 @@ ENegation >> accept: aVisitor [
 ]
 
 { #category : #accessing }
-ENegation >> evaluateWith: anObject [
-
-	^ self accept: (EEvaluatorVisitor new binding: anObject)
-]
-
-{ #category : #accessing }
 ENegation >> expression [
 	^expression 
 ]

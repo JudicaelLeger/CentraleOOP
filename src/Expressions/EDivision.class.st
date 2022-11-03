@@ -40,12 +40,6 @@ EDivision >> denominator: anExpression [
 ]
 
 { #category : #visiting }
-EDivision >> evaluateWith: anObject [
-
-	^ self accept: (EEvaluatorVisitor new binding: anObject)
-]
-
-{ #category : #visiting }
 EDivision >> numerator [ 
 	^numerator  
 	

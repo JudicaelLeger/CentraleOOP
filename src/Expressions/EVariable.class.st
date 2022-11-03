@@ -13,11 +13,6 @@ EVariable >> accept: aVisitor [
 ]
 
 { #category : #accessing }
-EVariable >> evaluateWith: aBindingDictionary [
-	^self accept: (EEvaluatorVisitor new binding: aBindingDictionary) 
-]
-
-{ #category : #accessing }
 EVariable >> id [ 
 	^id
 ]

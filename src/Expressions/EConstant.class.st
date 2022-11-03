@@ -29,11 +29,6 @@ EConstant >> accept: aVisitor [
 	^aVisitor visitConstant: self
 ]
 
-{ #category : #'public access' }
-EConstant >> evaluateWith: anObject [
-	^ self accept: EEvaluatorVisitor new
-]
-
 { #category : #accessing }
 EConstant >> printOn: aStream [
 	aStream nextPutAll: value printString

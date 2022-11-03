@@ -24,12 +24,6 @@ EMultiplication >> accept: aVisitor [
 ]
 
 { #category : #accessing }
-EMultiplication >> evaluateWith: anObject [
-
-	^ self accept: (EEvaluatorVisitor new binding: anObject)
-]
-
-{ #category : #accessing }
 EMultiplication >> left: anExpression [
  left:= anExpression 
 ]

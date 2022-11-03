@@ -24,12 +24,6 @@ EAddition >> accept: aVisitor [
 ]
 
 { #category : #accessing }
-EAddition >> evaluateWith: anObject [
-
-	^ self accept: (EEvaluatorVisitor new binding: anObject)
-]
-
-{ #category : #accessing }
 EAddition >> left: anExpression [
 	left:= anExpression  
 ]
